@@ -29,11 +29,11 @@ body {
 }
 
 @keyframes role-slider {
-  0%, 16.66% { transform:translateY(0%); }
-  20%, 36.66% { transform:translateY(-20%); }
-  40%, 56.66% { transform:translateY(-40%); }
-  60%, 76.66% { transform: translateY(-60%); }
-  80%, 96.66% { transform: translateY(-80%); }
+  0%, 16.66% { transform:translateY(0%); color: rgb(124, 198, 223);}
+  20%, 36.66% { transform:translateY(-20%); color: cyan;}
+  40%, 56.66% { transform:translateY(-40%); color: darkcyan;}
+  60%, 76.66% { transform: translateY(-60%); color: rgb(59, 59, 177);}
+  80%, 96.66% { transform: translateY(-80%); color: rgb(52, 52, 219);}
   100% { transform: translateY(0%); }
 }
 
