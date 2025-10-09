@@ -62,13 +62,13 @@ body {
 }
 
 .spin-right {
-  animation: spin_right 3s linear infinite;
+  animation: spin_right 5s linear infinite;
 }
 
 .spin-left{
-  animation: spin_left 3s linear infinite;
+  animation: spin_left 5s linear infinite;
 }
 
 .spin-right-fast {
-  animation: spin_right 1.5s linear infinite;
+  animation: spin_right 4s linear infinite;
 }
