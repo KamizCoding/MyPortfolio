@@ -5,7 +5,7 @@ import { FaLinkedin, FaGithub, FaDownload } from "react-icons/fa";
 export default function HomePage() {
   return (
     <div className="flex items-center h-screen font-sans w-full bg-cover bg-center bg-no-repeat bg-[url('/images/homebg.png')]">
-      <div className="flex flex-col pt-20 pl-40 space y-2">
+      <div className="flex flex-col pt-20 pl-60 space y-2">
         <h1 className="flex text-6xl font-bold">Hello,</h1>
         <h1 className="text-4xl font-semibold">I'm <span className="text-5xl font-bold text-blue-300">Lukmaan Kamiss</span></h1>
         <p className="text-4xl font-bold">I'm a

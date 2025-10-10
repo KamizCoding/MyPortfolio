@@ -1,27 +1,30 @@
 import Image from "next/image";
 import React from "react";
-import {Route, Routes} from "react-router-dom";
 import HomePage from "./sections/home";
 import AboutPage from "./sections/about";
 import ContactPage from "./sections/contacts";
-import ProjectsPage from "./sections/projects"; 
+import ProjectsPage from "./sections/projects";
+import AnimatedBackground from "./components/animatedbackground";
 
 export default function Home() {
   return (
     <div className="font-sans items-center justify-items-center min-h-screen">
 
-        <section id="home" className="w-full">
+      <section id="home" className="w-full">
         <HomePage />
-        </section>
-        <section id="about" className="w-full">
+      </section>
+      <section id="about" className="w-full relative">
+        <AnimatedBackground />
         <AboutPage />
-        </section>
-        <section id="projects" className="w-full">
+      </section>
+      <section id="projects" className="w-full relative">
+        <AnimatedBackground />
         <ProjectsPage />
-        </section>
-        <section id="contact" className="w-full">
+      </section>
+      <section id="contact" className="w-full relative">
+        <AnimatedBackground />
         <ContactPage />
-        </section>
+      </section>
 
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a

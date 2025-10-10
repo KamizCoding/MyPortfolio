@@ -1,16 +1,20 @@
+import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJsSquare, FaGithub, FaGit } from "react-icons/fa";
+import { SiTailwindcss} from "react-icons/si";
+
 export default function AboutPage() {
     return (
-        <div className="flex flex-col bg-neutral-700 min-h-screen font-sans">
+        <div className="flex flex-col bg-neutral-700 min-h-screen font-sans pt-8">
             <div className="flex flex-col">
-                <h1 className="">A little bit about me</h1>
-                <p>I'm Lukmaan Kamiss, a software engineer based in Kandy, Sri Lanka, specializing in full-stack development with a focus on building practical, user-centered applications. I recently completed my Bachelor's in Software Engineering at APIIT and have spent the past few years turning ideas into functional solutions across web, mobile, and desktop platforms.
+                <h1 className="flex justify-center text-3xl font-bold underline text-shadow-lg text-shadow-blue-500 animate-pulse">A LITTLE BIT ABOUT ME</h1>
+                <div className="space-y-4 pt-8 p-55 pb-10 text-justify font-semibold">
+                    <p className="text-lg leading-relaxed mb-6">I'm <span className="text-white font-medium">Lukmaan Kamiss</span>, a full-stack software engineer based in Kandy, Sri Lanka, specializing in web, mobile, and desktop development.</p>
 
-                    My expertise spans the modern JavaScript ecosystem—React, Next.js, and the MERN stack—along with experience in PHP/Laravel, C#/.NET, and mobile development with Flutter. I'm particularly drawn to projects that solve real problems, whether that's building real-time chat systems, e-commerce platforms, or integrating AI capabilities like speech-to-text translation.
+                    <p className="text-base leading-relaxed mb-6 text-neutral-300">I work with <span className="text-blue-400 font-semibold">React, Next.js, and the MERN stack</span>, along with  <span className="text-blue-400"> PHP/Laravel, C#/.NET, and Flutter </span>. I build clean, user-centered applications from e-commerce platforms to real-time chat systems and AI-integrated solutions.</p>
 
-                    At Verve Automation, I worked on everything from responsive mobile apps to full-stack e-commerce solutions, collaborating in an Agile environment and sharpening my approach to clean, maintainable code. I believe the best software strikes a balance between technical excellence and genuine usability—code that works well and feels good to use.
-
-                    When I'm not coding, I'm exploring new technologies, contributing to open-source projects, or finding ways to optimize the applications I've already built. I'm always open to collaborating on interesting projects or discussing opportunities where I can contribute and continue growing as a developer.</p>
+                    <p className="text-base leading-relaxed text-neutral-400">Always open to interesting projects and opportunities.</p>
+                </div>
             </div>
+            
         </div>
     );
 }
