@@ -14,7 +14,27 @@ export default function AboutPage() {
                     <p className="text-base leading-relaxed text-neutral-400">Always open to interesting projects and opportunities.</p>
                 </div>
             </div>
-            
+            <div>
+                <h1 className="flex justify-center text-3xl font-bold underline text-shadow-lg text-shadow-blue-900 animate-pulse"> MY EXPERIENCE</h1>
+                <div className="relative flex items-center justify-center w-80 h-80 mx-auto">
+                    <div className="absolute z-10 text-white font-bold">Front End</div>
+                    <div className="absolute w-full h-full spin-right" style={{ animationDelay: "0s"}}>
+                        <FaHtml5 className="absolute left-1/2 top-7 transform -translate-x-1/2 rotate-0 text-orange-500 text-5xl" />
+                    </div>
+                    <div className="absolute w-full h-full spin-right" style={{ animationDelay: "1s"}}>
+                        <FaCss3Alt className="absolute left-1/2 top-7 transform -translate-x-1/2 rotate-60 text-blue-500 text-5xl" />
+                    </div>
+                    <div className="absolute w-full h-full spin-right" style={{ animationDelay: "2s"}}>
+                        <FaJsSquare className="absolute left-1/2 top-7 transform -translate-x-1/2 rotate-120 text-yellow-500 text-5xl" />
+                    </div>
+                    <div className="absolute w-full h-full spin-right" style={{ animationDelay: "3s"}}>
+                        <FaReact className="absolute left-1/2 top-7 transform -translate-x-1/2 rotate-180 text-blue-300 text-5xl" />
+                    </div>
+                    <div className="absolute w-full h-full spin-right" style={{ animationDelay: "4s"}}>
+                        <FaNodeJs className="absolute left-1/2 top-7 transform -translate-x-1/2 rotate-240 text-green-500 text-5xl" />
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
