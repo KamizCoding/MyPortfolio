@@ -1,5 +1,8 @@
+'use client'
+
 import { techStack } from "../lib/techStack";
 import Image from "next/image";
+import { useState, useEffect, useRef } from "react";
 
 const categoryLabels = {
     frontend: "Front End Technologies",
@@ -20,13 +23,47 @@ const categoryGradients = {
 }
 
 export default function AboutPage() {
+
+    const [visibleCategories, setVisibleCategories] = useState([]);
+
+    const categoryRefs = useRef({});
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    const categoryName = entry.target.dataset.category;
+                    if (entry.isIntersecting) {
+                        setVisibleCategories((prev) => [...new Set([...prev, categoryName])]);
+                    } else {
+                        setVisibleCategories((prev) => prev.filter((cat) => cat !== categoryName));
+                    }
+                });
+            },
+            {
+                threshold: 0.3,
+                rootMargin: '-50px'
+            }
+        );
+
+        Object.values(categoryRefs.current).forEach((ref) => {
+            if (ref) observer.observe(ref);
+        });
+
+        return () => observer.disconnect();
+    }, []);
+
     const renderCategory = (category, catIndex) => {
         const technologies = techStack[category];
+        const isVisible = visibleCategories.includes(category);
+
         return (
             <div
-            
+                ref={(el) => (categoryRefs.current[category] = el)}
+                data-category={category}
                 key={category}
-                className={`p-6 rounded-xl ${categoryGradients[category]} animate-fade-slide-up`}
+                className={`p-6 rounded-xl ${categoryGradients[category]} animate-fade-slide-up transition-all duration-500 ${isVisible ? 'blur-0 opacity-100' : 'blur-sm opacity-60'
+                    }`}
                 style={{ animationDelay: `${catIndex * 100}ms` }}
             >
                 <h2 className="text-xl font-semibold text-neutral-400 mb-6 text-center">
@@ -102,13 +139,13 @@ export default function AboutPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <div className="flex flex-col gap-6">
                             {renderCategory('frontend', 0)}
-                            {renderCategory('databases',1)}
+                            {renderCategory('databases', 1)}
                         </div>
                         <div className="flex flex-col gap-6">
-                            {renderCategory('backend',2)}
-                            {renderCategory('mobile',3)}
-                            {renderCategory('desktop',4)}
-                            {renderCategory('versioncontrol',5)}
+                            {renderCategory('backend', 2)}
+                            {renderCategory('mobile', 3)}
+                            {renderCategory('desktop', 4)}
+                            {renderCategory('versioncontrol', 5)}
                         </div>
 
                     </div>
