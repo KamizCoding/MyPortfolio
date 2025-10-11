@@ -1,7 +1,7 @@
 import { version } from "react";
 
 export const techStack = {
-    frontEnd: [
+    frontend: [
         {
             name: "React",
             icon: "/icons/react.svg",
@@ -114,6 +114,13 @@ export const techStack = {
             projects: ["Project AC", "Project AD"],
             description: "A high-level, class-based, object-oriented programming language.",
             variant: "standard"
+        },
+        {
+            name: "Kotlin",
+            icon: "/icons/kotlin.svg",
+            projects: ["Project AC", "Project AD"],
+            description: "A modern JVM language built for safety, simplicity, and full Java interoperability.",
+            variant: "featured-wide"
         }
     ],
     desktop: [
