@@ -1,5 +1,14 @@
-import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJsSquare, FaGithub, FaGit } from "react-icons/fa";
-import { SiTailwindcss} from "react-icons/si";
+import { version } from "react";
+import { techStack } from "../lib/techStack";
+
+const categoryLabels = {
+    frontEnd: "Front End Technologies",
+    backend: "Back End Technologies",
+    database: "Database Technologies",
+    mobile: "Mobile App Development Technologies",
+    desktop: "Desktop App DevelopmentnTechnologies",
+    versionControl: "Version Control & Deployment",
+}
 
 export default function AboutPage() {
     return (
@@ -14,25 +23,34 @@ export default function AboutPage() {
                     <p className="text-base leading-relaxed text-neutral-400">Always open to interesting projects and opportunities.</p>
                 </div>
             </div>
-            <div>
-                <h1 className="flex justify-center text-3xl font-bold underline text-shadow-lg text-shadow-blue-900 animate-pulse"> MY EXPERIENCE</h1>
-                <div className="relative flex items-center justify-center w-80 h-80 mx-auto">
-                    <div className="absolute z-10 text-white font-bold">Front End</div>
-                    <div className="absolute w-full h-full spin-right" style={{ animationDelay: "0s"}}>
-                        <FaHtml5 className="absolute left-1/2 top-7 transform -translate-x-1/2 rotate-0 text-orange-500 text-5xl" />
-                    </div>
-                    <div className="absolute w-full h-full spin-right" style={{ animationDelay: "1s"}}>
-                        <FaCss3Alt className="absolute left-1/2 top-7 transform -translate-x-1/2 rotate-60 text-blue-500 text-5xl" />
-                    </div>
-                    <div className="absolute w-full h-full spin-right" style={{ animationDelay: "2s"}}>
-                        <FaJsSquare className="absolute left-1/2 top-7 transform -translate-x-1/2 rotate-120 text-yellow-500 text-5xl" />
-                    </div>
-                    <div className="absolute w-full h-full spin-right" style={{ animationDelay: "3s"}}>
-                        <FaReact className="absolute left-1/2 top-7 transform -translate-x-1/2 rotate-180 text-blue-300 text-5xl" />
-                    </div>
-                    <div className="absolute w-full h-full spin-right" style={{ animationDelay: "4s"}}>
-                        <FaNodeJs className="absolute left-1/2 top-7 transform -translate-x-1/2 rotate-240 text-green-500 text-5xl" />
-                    </div>
+
+            <div className="py-5">
+                <div className="container mx-auto px-6">
+                    <h1 className="flex justify-center text-3xl font-bold underline text-shadow-lg text-shadow-blue-500 animate-pulse">My Experience</h1>
+
+                    {Object.entries(techStack).map(([category, technologies], catIndex) => (
+                        <div key={category} className={`mb-12 animate-fade-slide-up delay-${catIndex * 200}`}>
+                            <h2 className="text-xl font-semibold text-neutral-400 mb-6">{categoryLabels[category]}</h2>
+                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                                {technologies.map((tech, techIndex) => (
+                                    <div key={tech.name} className="flip-card h-48 animate-fade-slide-up hover:scale-105 transition-transform durarion-300">
+                                        <div className="flip-card-inner">
+                                            <div className="flip-card-front bg-neutral-800 border border-neutral-700 rounded-lg p-6 flex flex-col items-center justify-center">
+                                                <img src={tech.icon} alt={tech.name} className="w-16 h-16 mb-4" />
+                                                <h3 className="text-white font-medium">{tech.name}</h3>
+                                            </div>
+
+                                            <div className="flip-card-back bg-neutral-800 border border-neutral-700 rounded-lg p-6 flex flex-col items-center justify-center">
+                                                <p className="text-white font-semibold text-lg mb-3">{tech.name}</p>
+                                                <p className="text-blue-400 text-sm font-medium mb-2">{tech.projects}</p>
+                                                <p className="text-neutrzl-300 text-sm leading-relaxed">{tech.description}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
