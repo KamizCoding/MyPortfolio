@@ -122,7 +122,6 @@ export default function AboutPage() {
     return (
         <div className="flex flex-col bg-neutral-700 min-h-screen font-sans pt-8">
             <div className="flex flex-col">
-                <h1 className="flex justify-center text-3xl font-bold underline text-shadow-lg text-shadow-blue-500 animate-pulse">A LITTLE BIT ABOUT ME</h1>
                 <div className="space-y-4 pt-8 px-6 pb-10 text-justify font-semibold max-w-4xl mx-auto">
                     <p className="text-lg leading-relaxed mb-6">I'm <span className="text-white font-medium">Lukmaan Kamiss</span>, a full-stack software engineer based in Kandy, Sri Lanka, specializing in web, mobile, and desktop development.</p>
 
