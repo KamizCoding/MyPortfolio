@@ -65,20 +65,20 @@ export default function ContactPage() {
                         {state.errors?.name && <p className="pl-8 text-red-500 text-sm">{state.errors.name}</p>}
                     </div>
                     <div>
-                        <h3 className="flex justify-center">Please Enter Your Gmail Address</h3>
-                        <input type="text" name="gmail" className="border-2 border-blue-400 rounded-lg mt-3"></input>
+                        <h3 className="flex justify-center">Please Enter Your Active Gmail Address</h3>
+                        <input type="text" name="gmail" className="border-2 border-blue-400 rounded-lg mt-3 ml-8"></input>
                         {state.errors?.gmail && <p className="pl-4 text-red-500 text-sm">{state.errors.gmail}</p>}
                     </div>
                     <div>
                         <h3 className="flex justify-center">Please Enter the Type of Service You Require</h3>
                         <select name="category" className="border-2 border-blue-400 ml-6 mt-3">
-                            <option value="">Select a Service Type</option>
-                            <option value="FrontEnd Development"> Front End Development</option>
-                            <option value="BackEnd Development"> Back End Development</option>
-                            <option value="MERN Development"> MERN Development</option>
-                            <option value="Full Stack Development"> Full Stack Development</option>
-                            <option value="Mobile Application Development"> Mobile Application Development</option>
-                            <option value="Other"> Other</option>
+                            <option className="bg-slate-500"value="">Select a Service Type</option>
+                            <option  className="bg-slate-500"value="FrontEnd Development"> Front End Development</option>
+                            <option className="bg-slate-500" value="BackEnd Development"> Back End Development</option>
+                            <option className="bg-slate-500" value="MERN Development"> MERN Development</option>
+                            <option className="bg-slate-500" value="Full Stack Development"> Full Stack Development</option>
+                            <option className="bg-slate-500" value="Mobile Application Development"> Mobile Application Development</option>
+                            <option className="bg-slate-500" value="Other"> Other</option>
                         </select>
                         {state.errors?.category && <p className="text-red-500 text-sm">{state.errors.categpry}</p>}
                     </div>
