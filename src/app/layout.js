@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,8 @@ export default function RootLayout({ children }) {
           <Link href="#contact" className="mr-4">Contact</Link>
         </nav>
         {children}
+
+        <Toaster position="bottom-center" reverseOrder={false}></Toaster>
       </body>
 
     </html>

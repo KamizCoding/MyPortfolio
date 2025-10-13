@@ -1,6 +1,7 @@
 "use client"
 
 import { useActionState } from "react";
+import toast from "react-hot-toast";
 
 export default function ContactPage() {
     async function formAction(prevState, formData) {
@@ -24,22 +25,31 @@ export default function ContactPage() {
         const object = Object.fromEntries(formData);
         const json = JSON.stringify(object);
 
-        const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
-                Accept: "application/json"
-            },
-            body: json
-        });
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json",
+                    Accept: "application/json"
+                },
+                body: json
+            });
 
-        const result = await response.json();
-        if (result.success) {
-            console.log(result);
-            return { success: true };
+            const result = await response.json();
+            if (result.success) {
+                console.log(result);
+                toast.success("Your Mail Was Sent Succesfully, I Will Get in Contact With You Soon");
+                return { success: true };
+            } else {
+                toast.error("❌ Sorry, Your Mail Was Not Forwarded Successfully.");
+                return { success: false, errors: { submit: "Something went wrong." } };
+            }
         }
+        catch (error) {
+            toast.error("Sorry Your Mail Was Not Forwarded Succesfully")
+            return { success: false, errors: { submit: "Something Went Wrong, Please Try Again" } };
 
-        return { success: false, errors: { submit: "Something Went Wrong, Please Try Again" } };
+        }
     }
 
     const [state, formActionDispatch] = useActionState(formAction, { success: false, errors: {} })
@@ -88,8 +98,6 @@ export default function ContactPage() {
                             {state.pending ? "Submitting..." : "Submit Form"}
                         </span>
                     </button>
-                    {state?.success && <p className="text-green-500">Form submitted successfully!</p>}
-                    {state?.errors?.submit && <p className="text-red-500">{state.errors.submit}</p>}
                 </form>
             </>
         </div>
