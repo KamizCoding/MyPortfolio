@@ -25,23 +25,22 @@ export default function ContactPage() {
         }
     }
 
-
     return (
         <div className="flex flex-col bg-neutral-700 min-h-screen font-sans">
             <h1 className="flex justify-center text-3xl font-bold underline text-shadow-lg text-shadow-blue-500 animate-pulse">Get in Touch With Me!!!!</h1>
             <>
-                <form onSubmit={handleSubmit} className="bg-yellow-500 flex flex-col rounded-lg w-140 items-center ml-77 mt-6">
-                    <div>
-                        <h3>Please Enter Your Name</h3>
-                        <input type="text" name="name" className="border-2 border-blue-400 rounded-lg" ></input>
+                <form onSubmit={handleSubmit} className="bg-gray-900 flex flex-col rounded-lg w-140 items-center ml-77 mt-6 gap-4">
+                    <div className="flex flex-col mt-5">
+                        <h3 className="flex justify-center">Please Enter Your Name</h3>
+                        <input type="text" name="name" className="border-2 border-blue-400 rounded-lg mt-3" ></input>
                     </div>
                     <div>
-                        <h3>Please Enter Your Name</h3>
-                        <input type="text" name="email"  className="border-2 border-blue-400 rounded-lg"></input>
+                        <h3 className="flex justify-center">Please Enter Your Gmail Address</h3>
+                        <input type="text" name="email" className="border-2 border-blue-400 rounded-lg mt-3"></input>
                     </div>
                     <div>
-                        <h3>Please Enter the Type of Service You Require</h3>
-                        <select name="category" className="border-2 border-blue-400 ml-10">
+                        <h3 className="flex justify-center">Please Enter the Type of Service You Require</h3>
+                        <select name="category" className="border-2 border-blue-400 ml-6 mt-3">
                             <option value="">Select a Service Type</option>
                             <option value="FrontEnd Development"> Front End Development</option>
                             <option value="BackEnd Development"> Back End Development</option>
@@ -52,10 +51,14 @@ export default function ContactPage() {
                         </select>
                     </div>
                     <div>
-                        <h3>Please Enter the Specifics of You Requirement</h3>
-                        <input type="text" name="message"  className="border-2 border-blue-400 rounded-lg ml-15"></input>
+                        <h3 className="flex justiyf-center">Please Enter the Specifics of You Requirement</h3>
+                        <textarea name="message" className="border-2 border-blue-400 rounded-lg ml-15 h-35 mt-3"></textarea>
                     </div>
-                    <button type="submit">Submit Form</button>
+                    <button className="relative group overflow-hidden py-1 px-6 rounded text-white font-semibold transition-all duration-300 cursor-pointer mb-3" type="submit">
+                        <span className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-900 opacity-100 group-hover:opacity-0 transition-opacity duration-500"></span>
+                        <span className="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                        <span className="flex relative z-10 gap-2 pt-2 text-xl">Submit Form</span>
+                    </button>
                 </form>
             </>
         </div>
